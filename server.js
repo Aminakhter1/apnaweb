@@ -8,10 +8,15 @@ import productRoute from "./routes/productRoute.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 import path from "path";
+import {fileURLToPath} from 'url';
 //config env note if env file is in another folder you mention in config({path:"write path"})
 dotenv.config();
 //database config
 connectDB();
+//esmodule config
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
+
 //rest object
 const app = express();
 //rest api
